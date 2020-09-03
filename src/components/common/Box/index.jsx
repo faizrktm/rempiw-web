@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import getSpacer from 'utils/theme/getSpacer';
+import getSpacer, { spaces } from 'utils/theme/getSpacer';
 import {
   getAlignItems,
   getAlignContent,
@@ -12,7 +12,7 @@ import {
   getFlex,
 } from 'utils/theme/getFlex';
 import getColor from 'utils/theme/getColor';
-import getOverflow from 'utils/theme/getOverflow';
+import getOverflow, { overflows } from 'utils/theme/getOverflow';
 import getRadius from 'utils/theme/getRadius';
 
 const Box = ({
@@ -69,25 +69,22 @@ Box.defaultProps = {
   overflow: null,
 };
 
-const sizes = ['none', 'hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'xxxlarge'];
-const overflows = ['auto', 'hidden', 'scroll', 'visible'];
-
 Box.propTypes = {
-  margin: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.shape({
-    vertical: PropTypes.oneOf(sizes),
-    horizontal: PropTypes.oneOf(sizes),
-    top: PropTypes.oneOf(sizes),
-    bottom: PropTypes.oneOf(sizes),
-    right: PropTypes.oneOf(sizes),
-    left: PropTypes.oneOf(sizes),
+  margin: PropTypes.oneOfType([PropTypes.oneOf(spaces), PropTypes.shape({
+    vertical: PropTypes.oneOf(spaces),
+    horizontal: PropTypes.oneOf(spaces),
+    top: PropTypes.oneOf(spaces),
+    bottom: PropTypes.oneOf(spaces),
+    right: PropTypes.oneOf(spaces),
+    left: PropTypes.oneOf(spaces),
   })]),
-  pad: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.shape({
-    vertical: PropTypes.oneOf(sizes),
-    horizontal: PropTypes.oneOf(sizes),
-    top: PropTypes.oneOf(sizes),
-    bottom: PropTypes.oneOf(sizes),
-    right: PropTypes.oneOf(sizes),
-    left: PropTypes.oneOf(sizes),
+  pad: PropTypes.oneOfType([PropTypes.oneOf(spaces), PropTypes.shape({
+    vertical: PropTypes.oneOf(spaces),
+    horizontal: PropTypes.oneOf(spaces),
+    top: PropTypes.oneOf(spaces),
+    bottom: PropTypes.oneOf(spaces),
+    right: PropTypes.oneOf(spaces),
+    left: PropTypes.oneOf(spaces),
   })]),
   direction: PropTypes.oneOf(['row', 'column', 'row-responsive', 'row-reverse', 'column-reverse']),
   flex: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['grow', 'shrink']), PropTypes.shape({

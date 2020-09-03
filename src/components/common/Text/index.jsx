@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import getColor from 'utils/theme/getColor';
-import getFontStyle, { getTextAlign } from 'utils/theme/getFontStyle';
-import getSpacer from 'utils/theme/getSpacer';
+import getFontStyle, { getTextAlign, textSizes } from 'utils/theme/getFontStyle';
+import getSpacer, { spaces } from 'utils/theme/getSpacer';
 
 const Text = ({
   size,
@@ -65,20 +65,17 @@ Text.defaultProps = {
   a11yTitle: '',
 };
 
-const spacer = ['none', 'hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'xxxlarge'];
-const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
-
 Text.propTypes = {
-  size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
+  size: PropTypes.oneOfType([PropTypes.oneOf(textSizes), PropTypes.string]),
   color: PropTypes.string,
   weight: PropTypes.string,
-  margin: PropTypes.oneOfType([PropTypes.oneOf(spacer), PropTypes.shape({
-    vertical: PropTypes.oneOf(spacer),
-    horizontal: PropTypes.oneOf(spacer),
-    top: PropTypes.oneOf(spacer),
-    bottom: PropTypes.oneOf(spacer),
-    right: PropTypes.oneOf(spacer),
-    left: PropTypes.oneOf(spacer),
+  margin: PropTypes.oneOfType([PropTypes.oneOf(spaces), PropTypes.shape({
+    vertical: PropTypes.oneOf(spaces),
+    horizontal: PropTypes.oneOf(spaces),
+    top: PropTypes.oneOf(spaces),
+    bottom: PropTypes.oneOf(spaces),
+    right: PropTypes.oneOf(spaces),
+    left: PropTypes.oneOf(spaces),
   })]),
   textAlign: PropTypes.oneOf(['start', 'end', 'center']),
   truncate: PropTypes.bool,

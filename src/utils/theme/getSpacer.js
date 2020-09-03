@@ -1,7 +1,9 @@
 import theme from 'config/theme';
 
+export const spaces = Object.keys(theme.spaces);
+
 export default function getSpacer(space) {
-  const { spaces } = theme;
+  const { spaces: spacesObj } = theme;
   if (typeof space === 'object') {
     const spacing = {
       top: 'none',
@@ -10,28 +12,28 @@ export default function getSpacer(space) {
       left: 'none',
     };
     if (space.vertical) {
-      const vertical = spaces[space.vertical] || space.vertical;
+      const vertical = spacesObj[space.vertical] || space.vertical;
       spacing.top = vertical;
       spacing.bottom = vertical;
     }
     if (space.horizontal) {
-      const horizontal = spaces[space.horizontal] || space.horizontal;
+      const horizontal = spacesObj[space.horizontal] || space.horizontal;
       spacing.right = horizontal;
       spacing.left = horizontal;
     }
     if (space.top) {
-      spacing.top = spaces[space.top] || space.top;
+      spacing.top = spacesObj[space.top] || space.top;
     }
     if (space.right) {
-      spacing.right = spaces[space.right] || space.right;
+      spacing.right = spacesObj[space.right] || space.right;
     }
     if (space.bottom) {
-      spacing.bottom = spaces[space.bottom] || space.bottom;
+      spacing.bottom = spacesObj[space.bottom] || space.bottom;
     }
     if (space.left) {
-      spacing.left = spaces[space.left] || space.left;
+      spacing.left = spacesObj[space.left] || space.left;
     }
     return Object.values(spacing).join(' ');
   }
-  return spaces[space] || space;
+  return spacesObj[space] || space;
 }
