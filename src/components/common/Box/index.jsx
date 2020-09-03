@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import getSpacer from 'utils/getSpacer';
+import getSpacer from 'utils/theme/getSpacer';
 import {
   getAlignItems,
   getAlignContent,
@@ -10,10 +10,10 @@ import {
   getJustify,
   getWrap,
   getFlex,
-} from 'utils/getFlex';
-import getColor from 'utils/getColor';
-import getOverflow from 'utils/getOverflow';
-import getRadius from 'utils/getRadius';
+} from 'utils/theme/getFlex';
+import getColor from 'utils/theme/getColor';
+import getOverflow from 'utils/theme/getOverflow';
+import getRadius from 'utils/theme/getRadius';
 
 const Box = ({
   margin,

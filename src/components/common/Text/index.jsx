@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import getColor from 'utils/getColor';
-import getFontStyle, { getTextAlign } from 'utils/getFontStyle';
-import getSpacer from 'utils/getSpacer';
+import getColor from 'utils/theme/getColor';
+import getFontStyle, { getTextAlign } from 'utils/theme/getFontStyle';
+import getSpacer from 'utils/theme/getSpacer';
 
 const Text = ({
   size,
