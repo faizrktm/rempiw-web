@@ -1,4 +1,4 @@
-import theme from '../config/theme';
+import theme from 'config/theme';
 
 export default function getFontStyle(size) {
   return theme.text[size] || {

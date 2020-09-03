@@ -65,19 +65,20 @@ Text.defaultProps = {
   a11yTitle: '',
 };
 
-export const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
+const spacer = ['none', 'hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'xxxlarge'];
+const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
 
 Text.propTypes = {
   size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
   color: PropTypes.string,
   weight: PropTypes.string,
-  margin: PropTypes.oneOfType([PropTypes.oneOf(['none', ...sizes]), PropTypes.shape({
-    vertical: PropTypes.oneOf(sizes),
-    horizontal: PropTypes.oneOf(sizes),
-    top: PropTypes.oneOf(sizes),
-    bottom: PropTypes.oneOf(sizes),
-    right: PropTypes.oneOf(sizes),
-    left: PropTypes.oneOf(sizes),
+  margin: PropTypes.oneOfType([PropTypes.oneOf(spacer), PropTypes.shape({
+    vertical: PropTypes.oneOf(spacer),
+    horizontal: PropTypes.oneOf(spacer),
+    top: PropTypes.oneOf(spacer),
+    bottom: PropTypes.oneOf(spacer),
+    right: PropTypes.oneOf(spacer),
+    left: PropTypes.oneOf(spacer),
   })]),
   textAlign: PropTypes.oneOf(['start', 'end', 'center']),
   truncate: PropTypes.bool,
