@@ -1,6 +1,6 @@
-import Box from 'components/common/Box';
-import Text from 'components/common/Text';
-import Heading, { DocumentOutline } from 'components/common/Heading';
+import Box from 'components/foundations/Box';
+import Text from 'components/foundations/Text';
+import Heading, { DocumentOutline } from 'components/foundations/Heading';
 import useLanguage from 'utils/hooks/useLanguage';
 
 export default function Home() {
