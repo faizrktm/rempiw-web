@@ -3,7 +3,7 @@ import Text from 'components/foundations/Text';
 import Heading, { DocumentOutline } from 'components/foundations/Heading';
 import { useLanguage } from 'utils/i18n';
 
-export default function Home() {
+export default function About() {
   const { t, changeLanguage } = useLanguage();
 
   const onChangeLanguage = (lang) => {
@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <DocumentOutline>
-      <Heading>Example</Heading>
+      <Heading>About</Heading>
       <Box gap="small" margin="medium">
         <DocumentOutline>
           <Heading>Button Language</Heading>
@@ -28,17 +28,6 @@ export default function Home() {
         <DocumentOutline>
           <Heading>Example Box and Text 1</Heading>
           <Box background="brand" pad="medium">
-            <Text color="white" size="xxlarge">{t('hello')}</Text>
-            <Text color="white" size="xlarge">{t('hello')}</Text>
-            <Text color="white" size="large">{t('hello')}</Text>
-            <Text color="white" size="medium">{t('hello')}</Text>
-            <Text color="white" size="small">{t('hello')}</Text>
-            <Text color="white" size="xsmall">{t('hello')}</Text>
-          </Box>
-        </DocumentOutline>
-        <DocumentOutline>
-          <Heading>Example Box and Text 2</Heading>
-          <Box round="large" background="chill-1" pad="medium" direction="column-reverse">
             <Text color="white" size="xxlarge">{t('hello')}</Text>
             <Text color="white" size="xlarge">{t('hello')}</Text>
             <Text color="white" size="large">{t('hello')}</Text>
