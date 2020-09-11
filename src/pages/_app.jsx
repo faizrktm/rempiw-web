@@ -1,12 +1,12 @@
 import App from 'next/app';
-import LanguageProvider from 'utils/i18n';
+import LanguageProvider, { defaultLang } from 'utils/i18n';
 import cookies from 'utils/cookies';
 import Request from 'utils/request';
 
 // eslint-disable-next-line react/prop-types
-const MyApp = ({ Component, pageProps: { lang, ...rest } }) => (
-  <LanguageProvider lang={lang}>
-    <Component {...rest} />
+const MyApp = ({ Component, initialLanguage, pageProps }) => (
+  <LanguageProvider lang={initialLanguage}>
+    <Component {...pageProps} />
   </LanguageProvider>
 );
 
@@ -36,9 +36,7 @@ MyApp.getInitialProps = async (appContext) => {
 
   return ({
     ...appProps,
-    pageProps: {
-      lang,
-    },
+    initialLanguage: lang || defaultLang,
   });
 };
 

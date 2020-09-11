@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cookies from 'utils/cookies';
 import translate from './translate';
 
-const defaultLang = 'en';
+export const defaultLang = 'en';
 
 const LanguageContext = React.createContext();
 
