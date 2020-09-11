@@ -1,5 +1,5 @@
 import qs from 'qs';
-import { publicRuntimeConfig } from '../../next.config';
+import getConfig from 'next/config';
 
 export function isServer() {
   return !(
@@ -14,6 +14,8 @@ export default class Request {
     if (isServer() && !req) {
       throw new Error('Request must be set');
     }
+    const { publicRuntimeConfig } = getConfig();
+    this.nextConfig = publicRuntimeConfig;
     this.req = req;
   }
 
@@ -28,7 +30,7 @@ export default class Request {
   get language() {
     const pathOnly = this.req.url.split('?')[0].split('/');
     const lastSubPath = pathOnly[pathOnly.length - 1];
-    return publicRuntimeConfig.localeSubpaths[lastSubPath];
+    return this.nextConfig.localeSubpaths[lastSubPath];
   }
 
   get query() {
