@@ -9,7 +9,7 @@ This Boilerplate contains preinstalled and configured tools.
 * Storybook
 * Some basic UI components
 * ESlint support
-* Internationalization support with next-i18next
+* Internationalization support created by the author himself
 * src base path
 
 ### Installing
