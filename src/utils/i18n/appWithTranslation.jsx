@@ -16,11 +16,11 @@ const appWithTranslation = (Component) => class extends React.Component {
     const { ctx } = appContext;
     const lang = cookies.language.get(ctx);
 
-    const { res, req, pathname } = ctx;
-    const { baseUrl, queryStringify, language } = new Request(req);
+    const { res } = ctx;
+    const { language, getChangeLangUrl } = new Request(ctx);
     if (lang !== language) {
       if (res) {
-        const url = `${baseUrl}${pathname !== '/' ? pathname : ''}${lang ? `/${lang}` : ''}${queryStringify}`;
+        const url = getChangeLangUrl(lang);
         res.writeHead(301, {
           Location: url,
         });
