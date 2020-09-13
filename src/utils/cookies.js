@@ -3,7 +3,7 @@ import cookies from 'next-cookies';
 import { isServer } from './request';
 
 const keys = {
-  LANGUAGE: 'flkq_language',
+  LANGUAGE: 'fz_i18n_lang',
 };
 
 class CookiesEntry {

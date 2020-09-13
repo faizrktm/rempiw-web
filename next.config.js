@@ -1,12 +1,13 @@
-const pathRewriteWithLang = require('./rewrites');
+const i18nRewrites = require('./src/utils/i18n/rewrites');
 
 const localeSubpaths = {
   id: 'id'
 };
 
 module.exports = {
-  rewrites: async () => pathRewriteWithLang(localeSubpaths),
+  rewrites: async () => i18nRewrites(localeSubpaths),
   publicRuntimeConfig: {
+    defaultLang: 'en',
     localeSubpaths,
   },
 }

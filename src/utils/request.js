@@ -9,13 +9,13 @@ export function isServer() {
   );
 }
 
+const { publicRuntimeConfig } = getConfig();
+
 export default class Request {
   constructor(req) {
     if (isServer() && !req) {
       throw new Error('Request must be set');
     }
-    const { publicRuntimeConfig } = getConfig();
-    this.nextConfig = publicRuntimeConfig;
     this.req = req;
   }
 
@@ -28,16 +28,18 @@ export default class Request {
   }
 
   get language() {
-    const pathOnly = this.req.url.split('?')[0].split('/');
-    const lastSubPath = pathOnly[pathOnly.length - 1];
-    return this.nextConfig.localeSubpaths[lastSubPath];
+    const pathOnly = this.req.url.split('?')[0].split('/'); // separate path from query
+    const lastSubPath = pathOnly[pathOnly.length - 1]; // get last subpath
+    return publicRuntimeConfig.localeSubpaths[lastSubPath]; // get lang from last subpath
   }
 
   get query() {
+    console.log(this.req);
     return isServer() ? qs.parse(this.req.url.split('?')?.[1]) : {};
   }
 
   get queryStringify() {
+    console.log(this.query);
     return qs.stringify(this.query, { addQueryPrefix: true });
   }
 
