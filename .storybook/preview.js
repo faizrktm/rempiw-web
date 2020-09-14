@@ -1,7 +1,5 @@
-import { ThemeProvider } from 'styled-components';
-import theme from '../src/config/theme';
-import '../src/normalize.css';
-import '../src/styles.css';
+import MyThemeProvider from '../src/components/foundations/Theme/MyThemeProvider';
+import GlobalStyles from '../src/components/foundations/Theme/GlobalStyles';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -9,9 +7,10 @@ export const parameters = {
 
 const withThemeProvider=(Story,context)=>{
   return (
-    <ThemeProvider theme={theme}>
+    <MyThemeProvider>
+      <GlobalStyles />
       <Story {...context} />
-    </ThemeProvider>
+    </MyThemeProvider>
   )
 }
 export const decorators = [withThemeProvider];
