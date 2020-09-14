@@ -48,7 +48,8 @@ yarn test --watch
 ```
 
 ## Components
-To see components documentation on storybook, kindly run on terminal
+Components documentation available at https://my-next-boilerplate-ui.vercel.app
+To see components documentation locally, run on terminal
 ```
 yarn storybook
 ```
