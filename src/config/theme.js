@@ -1,13 +1,42 @@
 export default {
   colors: {
     brand: '#27B2C7',
-    'chill-1': '#9B89FF',
-    'chill-2': '#E26FD4',
-    'chill-3': '#FF5F9B',
-    'nature-1': '#E3812F',
-    'nature-2': '#B5980A',
-    'nature-3': '#7AA829',
-    text: '#212529',
+    // Green Tosca Color Token
+    primary500: '#27B2C7',
+    primary400: '#3FC5D9',
+    primary300: '#74D9E8',
+    primary200: '#C2ECF2',
+    primary100: '#E6F7FA',
+    // Yellow Color Token
+    secondary500: '#FFB84C',
+    secondary400: '#FFC773',
+    secondary300: '#FFD699',
+    secondary200: '#FFEBCC',
+    secondary100: '#FFF7EB',
+    // Blue Sea Color
+    tertiary500: '#2196F3',
+    tertiary400: '#49A8F3',
+    tertiary300: '#92C8F3',
+    tertiary200: '#C2DDF3',
+    tertiary100: '#E0EAF3',
+    // Green Sea Color
+    success500: '#52A563',
+    success400: '#73BF82',
+    success300: '#90BD99',
+    success200: '#B8E6C1',
+    success100: '#DFF2E3',
+    // Red Sea Color
+    failed500: '#D01E1E',
+    failed400: '#D05353',
+    failed300: '#E88B8B',
+    failed200: '#F5C4C9',
+    failed100: '#F5DFE1',
+    // Black Color
+    black500: '#212529',
+    black400: '#B9B8B8',
+    black300: '#504E4E',
+    black200: '#EEEEEE',
+    black100: '#F9F9F9',
   },
   spaces: {
     none: '0px',

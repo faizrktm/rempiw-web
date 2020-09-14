@@ -8,7 +8,7 @@ export default {
 
 export const Example = () => (
   <Box
-    background="brand"
+    background="primary500"
     round="small"
     pad="medium"
   >

@@ -43,7 +43,7 @@ const StyledText = styled.span`
 
 Text.defaultProps = {
   size: 'medium',
-  color: 'text',
+  color: 'black500',
   weight: 'normal',
   margin: null,
   textAlign: 'start',
