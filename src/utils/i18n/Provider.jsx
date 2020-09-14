@@ -29,7 +29,7 @@ export const LanguageProvider = memo(({ lang, children }) => {
   return (
     <LanguageContext.Provider value={{
       language: lang,
-      t: (key) => translate(key, lang),
+      t: (key, props) => translate(key, lang, props),
       changeLanguage,
     }}
     >

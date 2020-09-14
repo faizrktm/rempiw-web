@@ -1,3 +1,6 @@
 {
-  "hello": "Halo, Ini Next JS Boilerplate"
+  "example": {
+    "hello": "Halo, Ini Next JS Boilerplate. Gunakan boilerplate ini dan jangan khawatir tentang setup awal yang melelahkan. Kamu hanya perlu fokus membuat hal keren!",
+    "change_language": "Ganti Bahasa ke {{ lang }}"
+  }
 }

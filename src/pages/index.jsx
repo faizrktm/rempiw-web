@@ -1,6 +1,6 @@
 import Box from 'components/foundations/Box';
-import Text from 'components/foundations/Text';
 import Heading, { DocumentOutline } from 'components/foundations/Heading';
+import Paragraph from 'components/foundations/Paragraph';
 import { useLanguage } from 'utils/i18n';
 
 export default function Home() {
@@ -12,41 +12,27 @@ export default function Home() {
 
   return (
     <DocumentOutline>
-      <Heading>Example</Heading>
-      <Box gap="small" margin="medium">
-        <DocumentOutline>
-          <Heading>Button Language</Heading>
-          <Box direction="row" gap="medium">
-            <button type="button" onClick={() => onChangeLanguage('id')}>
-              Change to Indo
-            </button>
-            <button type="button" onClick={() => onChangeLanguage('en')}>
-              Change to English
-            </button>
-          </Box>
-        </DocumentOutline>
-        <DocumentOutline>
-          <Heading>Example Box and Text 1</Heading>
-          <Box background="brand" pad="medium">
-            <Text color="white" size="xxlarge">{t('hello')}</Text>
-            <Text color="white" size="xlarge">{t('hello')}</Text>
-            <Text color="white" size="large">{t('hello')}</Text>
-            <Text color="white" size="medium">{t('hello')}</Text>
-            <Text color="white" size="small">{t('hello')}</Text>
-            <Text color="white" size="xsmall">{t('hello')}</Text>
-          </Box>
-        </DocumentOutline>
-        <DocumentOutline>
-          <Heading>Example Box and Text 2</Heading>
-          <Box round="large" background="chill-1" pad="medium" direction="column-reverse">
-            <Text color="white" size="xxlarge">{t('hello')}</Text>
-            <Text color="white" size="xlarge">{t('hello')}</Text>
-            <Text color="white" size="large">{t('hello')}</Text>
-            <Text color="white" size="medium">{t('hello')}</Text>
-            <Text color="white" size="small">{t('hello')}</Text>
-            <Text color="white" size="xsmall">{t('hello')}</Text>
-          </Box>
-        </DocumentOutline>
+      <Box gap="large" pad="medium">
+        <Heading>Heading 1</Heading>
+        <Box gap="medium">
+          <DocumentOutline>
+            <Heading>Heading 2</Heading>
+            <Box direction="row" gap="medium">
+              <button type="button" onClick={() => onChangeLanguage('id')}>
+                {t('example.change_language', { lang: 'Indonesia' })}
+              </button>
+              <button type="button" onClick={() => onChangeLanguage('en')}>
+                {t('example.change_language', { lang: 'English' })}
+              </button>
+            </Box>
+          </DocumentOutline>
+        </Box>
+        <Box gap="medium">
+          <DocumentOutline>
+            <Heading>Heading 2</Heading>
+            <Paragraph color="white">{t('example.hello')}</Paragraph>
+          </DocumentOutline>
+        </Box>
       </Box>
     </DocumentOutline>
   );
