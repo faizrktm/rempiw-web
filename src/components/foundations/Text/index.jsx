@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import getColor from 'utils/theme/getColor';
-import getFontStyle, { getTextAlign, textSizes } from 'utils/theme/getFontStyle';
-import getSpacer, { spaces } from 'utils/theme/getSpacer';
+import { getColor } from 'utils/theme/getColor';
+import { getTextStyle, getTextAlign, getTruncate } from 'utils/theme/getFontStyle';
+import { getMargin, spacesVariable } from 'utils/theme/getSpacer';
 
 const Text = ({
   size,
@@ -34,52 +34,48 @@ const Text = ({
 const StyledText = styled.span`
   font-weight: ${({ weight }) => weight};
   word-break: ${({ wordBreak }) => wordBreak};
-  color: ${({ color }) => getColor(color)};
-  margin: ${({ margin }) => getSpacer(margin)};
-  text-align: ${({ textAlign }) => getTextAlign(textAlign)};
-  ${({ size }) => {
-    const fontStyle = getFontStyle(size);
-    return `
-      font-size: ${fontStyle.size};
-      line-height: ${fontStyle.height};
-    `;
-  }};
-  ${({ truncate }) => {
-    if (!truncate) return '';
-    return `
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    `;
-  }};
+  ${getColor};
+  ${getMargin};
+  ${getTextAlign};
+  ${getTextStyle};
+  ${getTruncate};
 `;
 
 Text.defaultProps = {
   size: 'small',
   color: 'text',
   weight: 'normal',
-  margin: 'none',
+  margin: null,
   textAlign: 'start',
   truncate: false,
   wordBreak: 'normal',
-  a11yTitle: '',
+  a11yTitle: null,
 };
 
+const textSizesVariable = [
+  'large',
+  'medium',
+  'small',
+  'xsmall',
+];
+const textAlignVariable = ['start', 'end', 'center'];
+const textWordBreakVariable = ['normal', 'break-all', 'keep-all', 'break-word'];
+
 Text.propTypes = {
-  size: PropTypes.oneOfType([PropTypes.oneOf(textSizes), PropTypes.string]),
+  size: PropTypes.oneOfType([PropTypes.oneOf(textSizesVariable), PropTypes.string]),
   color: PropTypes.string,
   weight: PropTypes.string,
-  margin: PropTypes.oneOfType([PropTypes.oneOf(spaces), PropTypes.shape({
-    vertical: PropTypes.oneOf(spaces),
-    horizontal: PropTypes.oneOf(spaces),
-    top: PropTypes.oneOf(spaces),
-    bottom: PropTypes.oneOf(spaces),
-    right: PropTypes.oneOf(spaces),
-    left: PropTypes.oneOf(spaces),
+  margin: PropTypes.oneOfType([PropTypes.oneOf(spacesVariable), PropTypes.shape({
+    vertical: PropTypes.oneOf(spacesVariable),
+    horizontal: PropTypes.oneOf(spacesVariable),
+    top: PropTypes.oneOf(spacesVariable),
+    bottom: PropTypes.oneOf(spacesVariable),
+    right: PropTypes.oneOf(spacesVariable),
+    left: PropTypes.oneOf(spacesVariable),
   })]),
-  textAlign: PropTypes.oneOf(['start', 'end', 'center']),
+  textAlign: PropTypes.oneOf(textAlignVariable),
   truncate: PropTypes.bool,
-  wordBreak: PropTypes.oneOf(['normal', 'break-all', 'keep-all', 'break-word']),
+  wordBreak: PropTypes.oneOf(textWordBreakVariable),
   a11yTitle: PropTypes.string,
   children: PropTypes.string.isRequired,
 };

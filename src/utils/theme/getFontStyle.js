@@ -1,20 +1,30 @@
-import theme from 'config/theme';
-
-export const textSizes = Object.keys(theme.text);
-
-export default function getFontStyle(size) {
-  return theme.text[size] || {
+export function getTextStyle({ theme, size }) {
+  const selected = theme.text[size] || {
     size,
     height: '1.5em',
   };
+  return `
+    font-size: ${selected.size};
+    line-height: ${selected.height};
+  `;
 }
 
-const alignment = {
+const alignmentToken = {
   start: 'left',
   center: 'center',
   end: 'right',
 };
 
-export function getTextAlign(align) {
-  return alignment[align] || align;
+export function getTextAlign({ textAlign }) {
+  if (!textAlign) return '';
+  return `text-align: ${alignmentToken[textAlign] || textAlign}`;
+}
+
+export function getTruncate({ truncate }) {
+  if (!truncate) return '';
+  return `
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  `;
 }

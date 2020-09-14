@@ -16,33 +16,41 @@ export default {
     small: '4px',
     medium: '8px',
     large: '16px',
-    xlarge: '24px',
-    xxlarge: '32px',
-    xxxlarge: '40px',
+    xlarge: '32px',
   },
   text: {
-    xsmall: {
-      size: '13px',
-      height: '1.5em',
-    },
-    small: {
-      size: '16px',
+    large: {
+      size: '18px',
       height: '1.5em',
     },
     medium: {
-      size: '20px',
+      size: '16px',
       height: '1.5em',
     },
+    small: {
+      size: '14px',
+      height: '1.5em',
+    },
+    xsmall: {
+      size: '12px',
+      height: '1.5em',
+    },
+  },
+  paragraph: {
     large: {
-      size: '26px',
+      size: '18px',
       height: '1.5em',
     },
-    xlarge: {
-      size: '33px',
+    medium: {
+      size: '16px',
       height: '1.5em',
     },
-    xxlarge: {
-      size: '42px',
+    small: {
+      size: '14px',
+      height: '1.5em',
+    },
+    xsmall: {
+      size: '12px',
       height: '1.5em',
     },
   },

@@ -1,4 +1,4 @@
-const alignItems = {
+const alignItemsToken = {
   start: 'flex-start',
   end: 'flex-end',
   center: 'center',
@@ -6,14 +6,14 @@ const alignItems = {
   stretch: 'stretch',
 };
 
-const alignSelf = {
+const alignSelfToken = {
   start: 'flex-start',
   end: 'flex-end',
   center: 'center',
   stretch: 'stretch',
 };
 
-const justifies = {
+const justifiesToken = {
   around: 'space-around',
   between: 'space-between',
   center: 'center',
@@ -23,7 +23,7 @@ const justifies = {
   stretch: 'stretch',
 };
 
-const alignContent = {
+const alignContentToken = {
   start: 'flex-start',
   center: 'center',
   end: 'flex-end',
@@ -32,41 +32,45 @@ const alignContent = {
   stretch: 'stretch',
 };
 
-export function getAlignItems(align) {
-  return alignItems[align] || align;
+export function getAlignItems({ align }) {
+  if (!align) return '';
+  return `align-items: ${alignItemsToken[align] || align};`;
 }
 
-export function getAlignSelf(align) {
-  return alignSelf[align] || align;
+export function getAlignSelf({ alignSelf }) {
+  if (!alignSelf) return '';
+  return `align-self: ${alignSelfToken[alignSelf] || alignSelf};`;
 }
 
-export function getAlignContent(justify) {
-  return alignContent[justify] || justify;
+export function getAlignContent({ alignContent }) {
+  if (!alignContent) return '';
+  return `align-content: ${alignContentToken[alignContent] || alignContent};`;
 }
 
-export function getJustify(justify) {
-  return justifies[justify] || justify;
+export function getJustify({ justify }) {
+  if (!justify) return '';
+  return `justify-content: ${justifiesToken[justify] || justify};`;
 }
 
-export function getFlex(flex) {
+export function getFlex({ flex }) {
   if (typeof flex === 'string') {
     if (flex === 'grow') {
-      return '1 0';
+      return 'flex: 1 0;';
     } if (flex === 'shrink') {
-      return '0 1';
+      return 'flex: 0 1;';
     }
   }
   if (flex && typeof flex === 'object') {
     const flexs = [`${flex.grow || 0}`, `${flex.shrink || 0}`];
-    return flexs.join(' ');
+    return `flex: ${flexs.join(' ')};`;
   }
 
-  return flex ? '1 0' : '0 1';
+  return flex ? 'flex: 1 0;' : 'flex: 0 1;';
 }
 
-export function getWrap(wrap) {
-  if (typeof wrap === 'boolean') {
-    return wrap ? 'wrap' : 'nowrap';
+export function getWrap({ boxWrap }) {
+  if (typeof boxWrap === 'boolean') {
+    return boxWrap ? 'flex-wrap: wrap;' : 'flex-wrap: nowrap;';
   }
-  return 'wrap-reverse';
+  return 'flex-wrap: wrap-reverse;';
 }

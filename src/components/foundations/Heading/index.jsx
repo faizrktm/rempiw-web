@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { breakpoint } from 'styled-components-breakpoint';
 
-import getHeadingStyle from 'utils/theme/getHeadingStyle';
+import getHeadingStyle, { headingSizes } from 'utils/theme/getHeadingStyle';
 
 const Level = React.createContext(0);
 
@@ -47,11 +47,12 @@ Heading.defaultProps = {
 };
 
 Heading.propTypes = {
-  level: PropTypes.oneOf(['large', 1, 2, 3, 4, 5]),
+  level: PropTypes.oneOf(headingSizes),
   children: PropTypes.string.isRequired,
 };
 
 const H = styled.div`
+  margin: 0;
   ${({ level }) => {
     const styles = getHeadingStyle(level);
     return `

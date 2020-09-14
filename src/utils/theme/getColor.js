@@ -1,5 +1,7 @@
-import theme from 'config/theme';
+export function getColor({ theme, color }) {
+  return `color: ${theme.colors[color] || color};`;
+}
 
-export default function getColor(color) {
-  return theme.colors[color] || color;
+export function getBg({ theme, background }) {
+  return `background: ${theme.colors[background] || background};`;
 }

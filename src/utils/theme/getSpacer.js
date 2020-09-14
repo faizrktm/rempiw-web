@@ -1,8 +1,14 @@
-import theme from 'config/theme';
+export const spacesVariable = [
+  'none',
+  'hair',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+];
 
-export const spaces = Object.keys(theme.spaces);
-
-export default function getSpacer(space) {
+export default function getSpacer(theme, space) {
   const { spaces: spacesObj } = theme;
   if (typeof space === 'object') {
     const spacing = {
@@ -36,4 +42,19 @@ export default function getSpacer(space) {
     return Object.values(spacing).join(' ');
   }
   return spacesObj[space] || space;
+}
+
+export function getMargin({ theme, space }) {
+  if (!space) return '';
+  return `margin: ${getSpacer(theme, space)};`;
+}
+
+export function getPadding({ theme, pad }) {
+  if (!pad) return '';
+  return `padding: ${getSpacer(theme, pad)};`;
+}
+
+export function getGap({ theme, gap }) {
+  if (!gap) return '';
+  return `grid-gap: ${getSpacer(theme, gap)};`;
 }

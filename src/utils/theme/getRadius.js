@@ -1,12 +1,10 @@
-import theme from 'config/theme';
-
-export default function getRadius(radius) {
+export default function getRadius({ theme, round }) {
   const { spaces } = theme;
-  if (typeof radius === 'boolean') {
-    return radius ? `border-radius: ${spaces.small};` : 'border-radius: 0px;';
+  if (typeof round === 'boolean') {
+    return round ? `border-radius: ${spaces.small};` : '';
   }
-  if (radius && Array.isArray(radius)) {
-    return radius.map((rad) => `border-${rad.corner}-radius: ${spaces[rad.size || 'small'] || rad.size};`).join(' ');
+  if (round && Array.isArray(round)) {
+    return round.map((rad) => `border-${rad.corner}-radius: ${spaces[rad.size || 'small'] || rad.size};`).join(' ');
   }
-  return `border-radius: ${spaces[radius] || radius};`;
+  return `border-radius: ${spaces[round] || round};`;
 }

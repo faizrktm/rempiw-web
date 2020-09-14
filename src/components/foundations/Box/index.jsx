@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import getSpacer, { spaces } from 'utils/theme/getSpacer';
+import {
+  getMargin,
+  getPadding,
+  getGap,
+  spacesVariable,
+} from 'utils/theme/getSpacer';
 import {
   getAlignItems,
   getAlignContent,
@@ -11,8 +16,8 @@ import {
   getWrap,
   getFlex,
 } from 'utils/theme/getFlex';
-import getColor from 'utils/theme/getColor';
-import getOverflow, { overflows } from 'utils/theme/getOverflow';
+import { getBg } from 'utils/theme/getColor';
+import getOverflow from 'utils/theme/getOverflow';
 import getRadius from 'utils/theme/getRadius';
 
 const Box = ({
@@ -54,37 +59,37 @@ const Box = ({
 
 Box.defaultProps = {
   direction: 'column',
-  margin: 'none',
-  pad: 'none',
+  margin: null,
+  pad: null,
   flex: false,
-  gap: 'none',
-  align: '',
+  gap: null,
+  align: null,
   justify: 'stretch',
-  alignSelf: '',
-  background: '',
+  alignSelf: null,
+  background: null,
   wrap: false,
   alignContent: 'stretch',
   round: false,
-  a11yTitle: '',
+  a11yTitle: null,
   overflow: null,
 };
 
 Box.propTypes = {
-  margin: PropTypes.oneOfType([PropTypes.oneOf(spaces), PropTypes.shape({
-    vertical: PropTypes.oneOf(spaces),
-    horizontal: PropTypes.oneOf(spaces),
-    top: PropTypes.oneOf(spaces),
-    bottom: PropTypes.oneOf(spaces),
-    right: PropTypes.oneOf(spaces),
-    left: PropTypes.oneOf(spaces),
+  margin: PropTypes.oneOfType([PropTypes.oneOf(spacesVariable), PropTypes.shape({
+    vertical: PropTypes.oneOf(spacesVariable),
+    horizontal: PropTypes.oneOf(spacesVariable),
+    top: PropTypes.oneOf(spacesVariable),
+    bottom: PropTypes.oneOf(spacesVariable),
+    right: PropTypes.oneOf(spacesVariable),
+    left: PropTypes.oneOf(spacesVariable),
   })]),
-  pad: PropTypes.oneOfType([PropTypes.oneOf(spaces), PropTypes.shape({
-    vertical: PropTypes.oneOf(spaces),
-    horizontal: PropTypes.oneOf(spaces),
-    top: PropTypes.oneOf(spaces),
-    bottom: PropTypes.oneOf(spaces),
-    right: PropTypes.oneOf(spaces),
-    left: PropTypes.oneOf(spaces),
+  pad: PropTypes.oneOfType([PropTypes.oneOf(spacesVariable), PropTypes.shape({
+    vertical: PropTypes.oneOf(spacesVariable),
+    horizontal: PropTypes.oneOf(spacesVariable),
+    top: PropTypes.oneOf(spacesVariable),
+    bottom: PropTypes.oneOf(spacesVariable),
+    right: PropTypes.oneOf(spacesVariable),
+    left: PropTypes.oneOf(spacesVariable),
   })]),
   direction: PropTypes.oneOf(['row', 'column', 'row-responsive', 'row-reverse', 'column-reverse']),
   flex: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['grow', 'shrink']), PropTypes.shape({
@@ -98,9 +103,9 @@ Box.propTypes = {
   background: PropTypes.string,
   wrap: PropTypes.oneOfType([PropTypes.oneOf(['reverse']), PropTypes.bool]),
   alignContent: PropTypes.string,
-  overflow: PropTypes.oneOfType([PropTypes.oneOf(overflows), PropTypes.shape({
-    vertical: PropTypes.oneOf(overflows),
-    horizontal: PropTypes.oneOf(overflows),
+  overflow: PropTypes.oneOfType([PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible']), PropTypes.shape({
+    vertical: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible']),
+    horizontal: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible']),
   })]),
   round: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.arrayOf(PropTypes.shape({
     size: PropTypes.string,
@@ -115,16 +120,16 @@ export default Box;
 const Container = styled.div`
   display: flex;
   flex-direction: ${({ direction }) => direction};
-  margin: ${({ space }) => getSpacer(space)};
-  padding: ${({ pad }) => getSpacer(pad)};
-  grid-gap: ${({ gap }) => getSpacer(gap)};
-  ${({ align }) => (align ? `align-items: ${getAlignItems(align)};` : '')};
-  ${({ alignSelf }) => (alignSelf ? `align-self: ${getAlignSelf(alignSelf)};` : '')};
-  justify-content: ${({ justify }) => getJustify(justify)};
-  background: ${({ background }) => getColor(background)};
-  ${({ flex }) => (flex ? `flex: ${getFlex(flex)}` : '')};
-  flex-wrap: ${({ boxWrap }) => getWrap(boxWrap)};
-  align-content: ${({ alignContent }) => getAlignContent(alignContent)};
-  ${({ overflow }) => (overflow ? getOverflow(overflow) : '')};
-  ${({ round }) => (round ? getRadius(round) : '')};
+  ${getMargin};
+  ${getPadding};
+  ${getGap};
+  ${getAlignItems};
+  ${getAlignSelf};
+  ${getJustify};
+  ${getBg};
+  ${getFlex};
+  ${getWrap};
+  ${getAlignContent};
+  ${getOverflow};
+  ${getRadius};
 `;
