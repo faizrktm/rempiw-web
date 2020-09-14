@@ -8,7 +8,7 @@
     "start": "next start",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook -o storybook-static"
   },
   "dependencies": {
     "next": "9.5.3",
