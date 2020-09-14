@@ -42,7 +42,7 @@ const StyledText = styled.span`
 `;
 
 Text.defaultProps = {
-  size: 'small',
+  size: 'medium',
   color: 'text',
   weight: 'normal',
   margin: null,
