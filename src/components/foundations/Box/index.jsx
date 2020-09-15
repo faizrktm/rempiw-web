@@ -112,7 +112,7 @@ Box.propTypes = {
     corner: PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'top-left', 'top-right', 'bottom-left', 'bottom-right']),
   }))]),
   a11yTitle: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array, PropTypes.string]).isRequired,
 };
 
 export default Box;
