@@ -41,7 +41,7 @@ function _breakpoint(breakpoints, gte, lt) {
 
 function breakpoint(gte, lt) {
   return function (strings, ...interpolations) {
-    return function ({ theme = {} }) {
+    return function ({ theme = {} } = {}) {
       return _breakpoint(
         theme.breakpoints || defaultBreakpoints,
         gte,
@@ -49,6 +49,19 @@ function breakpoint(gte, lt) {
       )(strings, ...interpolations);
     };
   };
+}
+
+/**
+ *
+ * @param {[string]} possibleBreakpoint
+ * Check if passed styles contain breakpoint property such mobile, tablet, or desktop.
+ * Adding default for global css without media styles.
+ */
+export function checkBreakpoint(theme, possibleBreakpoint) {
+  if (typeof possibleBreakpoint !== 'object') return false;
+  const breakpoints = { _: 0, default: 0, ...(theme.breakpoints || defaultBreakpoints) };
+
+  return Object.keys(possibleBreakpoint).every((item) => breakpoints[item] !== undefined);
 }
 
 export default breakpoint;

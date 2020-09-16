@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <DocumentOutline>
-      <Box gap="large" pad="medium">
+      <Box gap="large" pad={{ _: 'medium', desktop: 'large' }} background="primary200" margin={{ _: 'medium', desktop: 'large' }}>
         <Heading>Heading 1</Heading>
         <Box gap="medium">
           <DocumentOutline>
@@ -30,7 +30,11 @@ export default function Home() {
         <Box gap="medium">
           <DocumentOutline>
             <Heading>Heading 2</Heading>
-            <Paragraph color="white">{t('example.hello')}</Paragraph>
+            <Paragraph>{t('example.hello')}</Paragraph>
+            <DocumentOutline>
+              <Heading>Heading 3</Heading>
+              <Paragraph size="small">{t('example.hello')}</Paragraph>
+            </DocumentOutline>
           </DocumentOutline>
         </Box>
       </Box>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import breakpoint from 'utils/theme/breakpoint';
 
-import getHeadingStyle, { headingSizes } from 'utils/theme/getHeadingStyle';
+import getHeadingStyle from 'utils/theme/getHeadingStyle';
 
 const Level = React.createContext(0);
 
@@ -20,16 +20,21 @@ DocumentOutline.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
 };
 
-const Heading = ({ level, children }) => (
+/**
+ *
+ * The Heading level will remain automatic even if we manually set props size.
+ * The size prop only used for inherit styling.
+ */
+const Heading = ({ size, children }) => (
   <Level.Consumer>
     {(inheritedLevel) => {
       let levelForStyling;
       let selectedLevel;
-      if (typeof level === 'string') {
+      if (typeof size === 'string') {
         selectedLevel = 1;
-        levelForStyling = level;
+        levelForStyling = size;
       } else {
-        selectedLevel = Math.min(level || inheritedLevel, 5);
+        selectedLevel = Math.min(inheritedLevel, 5);
         levelForStyling = selectedLevel;
       }
       const hLevel = `h${selectedLevel}`;
@@ -43,11 +48,12 @@ const Heading = ({ level, children }) => (
 );
 
 Heading.defaultProps = {
-  level: null,
+  size: null,
 };
 
 Heading.propTypes = {
-  level: PropTypes.oneOf(headingSizes),
+  /** A size of the heading, for styling purpose only, does not affect the leveling. */
+  size: PropTypes.oneOf(['large', 1, 2, 3, 4, 5]),
   children: PropTypes.string.isRequired,
 };
 

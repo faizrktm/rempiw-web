@@ -17,7 +17,7 @@ export const Example = () => (
           <DocumentOutline>
             <Heading>This is Heading 5 with automatic document outline</Heading>
             <DocumentOutline>
-              <Heading>This is Heading 6 with automatic document outline</Heading>
+              <Heading size="large">This is Heading 5 but have size Large with automatic document outline</Heading>
             </DocumentOutline>
           </DocumentOutline>
         </DocumentOutline>

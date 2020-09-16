@@ -1,10 +1,19 @@
+import { wrapper } from './core';
+
 export default function getRadius({ theme, round }) {
-  const { spaces } = theme;
-  if (typeof round === 'boolean') {
-    return round ? `border-radius: ${spaces.small};` : '';
-  }
-  if (round && Array.isArray(round)) {
-    return round.map((rad) => `border-${rad.corner}-radius: ${spaces[rad.size || 'small'] || rad.size};`).join(' ');
-  }
-  return `border-radius: ${spaces[round] || round};`;
+  return wrapper(theme, round, (style) => {
+    const { spaces } = theme;
+    if (typeof style === 'boolean') {
+      return style ? { 'border-radius': spaces.small } : {};
+    }
+    if (Array.isArray(style)) {
+      return style.reduce((acc, curr) => ({
+        ...acc,
+        [`border-${curr.corner}-radius`]: spaces[curr.size || 'small'] || curr.size,
+      }), {});
+    }
+    return {
+      'border-radius': spaces[style] || style,
+    };
+  });
 }

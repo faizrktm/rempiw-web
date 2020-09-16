@@ -15,3 +15,14 @@ export const Example = () => (
     <Text color="white">This is text inside a Box</Text>
   </Box>
 );
+
+const Template = (args) => (
+  <Box
+    {...args}
+  >
+    <Text color="white">This is text inside a Box</Text>
+  </Box>
+);
+
+export const WithArgs = Template.bind({});
+WithArgs.args = { background: 'primary500', round: 'small', pad: 'medium' };

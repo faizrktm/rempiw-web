@@ -8,6 +8,7 @@
     "start": "next start",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
+    "storybook-docs": "start-storybook -p 6006 --docs",
     "build-storybook": "build-storybook -c .storybook -o storybook-static"
   },
   "dependencies": {
@@ -21,7 +22,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
-    "@storybook/addon-actions": "^6.0.21",
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",
     "@storybook/react": "^6.0.21",

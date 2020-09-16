@@ -1,45 +1,27 @@
-import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { getColor } from 'utils/theme/getColor';
-import { getTextStyle, getTextAlign, getTruncate } from 'utils/theme/getFontStyle';
-import { getMargin, spacesVariable } from 'utils/theme/getSpacer';
-
-const Text = ({
-  size,
+import {
   color,
-  weight,
   margin,
+  weight,
+  wordBreak,
+  text,
   textAlign,
   truncate,
-  wordBreak,
-  a11yTitle,
-  children,
-}) => (
-  <StyledText
-    size={size}
-    color={color}
-    weight={weight}
-    margin={margin}
-    textAlign={textAlign}
-    truncate={truncate}
-    wordBreak={wordBreak}
-    aria-label={a11yTitle}
-  >
-    {children}
-  </StyledText>
-);
+} from 'utils/theme';
 
-const StyledText = styled.span`
-  font-weight: ${({ weight }) => weight};
-  word-break: ${({ wordBreak }) => wordBreak};
-  ${getColor};
-  ${getMargin};
-  ${getTextAlign};
-  ${getTextStyle};
-  ${getTruncate};
+const TextComponent = styled.span`
+  ${weight}
+  ${wordBreak}
+  ${color}
+  ${margin}
+  ${textAlign}
+  ${text}
+  ${truncate}
 `;
+
+const Text = (args) => <TextComponent {...args} />;
 
 Text.defaultProps = {
   size: 'medium',
@@ -49,7 +31,6 @@ Text.defaultProps = {
   textAlign: 'start',
   truncate: false,
   wordBreak: 'normal',
-  a11yTitle: null,
 };
 
 const textSizesVariable = [
@@ -60,11 +41,27 @@ const textSizesVariable = [
 ];
 const textAlignVariable = ['start', 'end', 'center'];
 const textWordBreakVariable = ['normal', 'break-all', 'keep-all', 'break-word'];
+const spacesVariable = [
+  'none',
+  'hair',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+];
 
 Text.propTypes = {
+  /** The font size and line height are primarily driven by the chosen tag.
+   * But, it can be adjusted via this size property. But the default line height is 1.5em. */
   size: PropTypes.oneOfType([PropTypes.oneOf(textSizesVariable), PropTypes.string]),
+  /** A color identifier to use for the text color. */
   color: PropTypes.string,
+  /** Font weight */
   weight: PropTypes.string,
+  /** The amount of margin around the text.
+   * An object can be specified to distinguish horizontal
+   * margin, vertical margin, and margin on a particular side. */
   margin: PropTypes.oneOfType([PropTypes.oneOf(spacesVariable), PropTypes.shape({
     vertical: PropTypes.oneOf(spacesVariable),
     horizontal: PropTypes.oneOf(spacesVariable),
@@ -73,10 +70,12 @@ Text.propTypes = {
     right: PropTypes.oneOf(spacesVariable),
     left: PropTypes.oneOf(spacesVariable),
   })]),
+  /** How to align the text inside the component. */
   textAlign: PropTypes.oneOf(textAlignVariable),
+  /** Restrict the text to a single line and truncate with ellipsis if it is too long to all fit. */
   truncate: PropTypes.bool,
+  /** Whether words should break when reaching the end of a line. */
   wordBreak: PropTypes.oneOf(textWordBreakVariable),
-  a11yTitle: PropTypes.string,
   children: PropTypes.string.isRequired,
 };
 

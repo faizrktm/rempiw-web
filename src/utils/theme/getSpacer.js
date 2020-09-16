@@ -1,12 +1,4 @@
-export const spacesVariable = [
-  'none',
-  'hair',
-  'xsmall',
-  'small',
-  'medium',
-  'large',
-  'xlarge',
-];
+import { wrapper } from './core';
 
 export default function getSpacer(theme, space) {
   const { spaces: spacesObj } = theme;
@@ -44,17 +36,20 @@ export default function getSpacer(theme, space) {
   return spacesObj[space] || space;
 }
 
-export function getMargin({ theme, space }) {
-  if (!space) return '';
-  return `margin: ${getSpacer(theme, space)};`;
+export function getMargin({ theme, margin }) {
+  return wrapper(theme, margin, (style) => ({
+    margin: getSpacer(theme, style),
+  }));
 }
 
 export function getPadding({ theme, pad }) {
-  if (!pad) return '';
-  return `padding: ${getSpacer(theme, pad)};`;
+  return wrapper(theme, pad, (style) => ({
+    padding: getSpacer(theme, style),
+  }));
 }
 
 export function getGap({ theme, gap }) {
-  if (!gap) return '';
-  return `grid-gap: ${getSpacer(theme, gap)};`;
+  return wrapper(theme, gap, (style) => ({
+    'grid-gap': getSpacer(theme, style),
+  }));
 }
