@@ -7,7 +7,7 @@ This Boilerplate contains preinstalled and configured tools.
 * Styled Components
 * Jest and React Testing Library
 * Storybook
-* Some basic UI components
+* Candi-UI Component Library
 * ESlint support
 * Internationalization support created by the author himself
 * src base path
@@ -47,14 +47,8 @@ To watch changes on test without running multiple yarn test, simply run
 yarn test --watch
 ```
 
-## Components
-Components documentation available at https://my-next-boilerplate-ui.vercel.app
-To see components documentation locally, run on terminal
-```
-yarn storybook
-```
-
-Open [http://localhost:6006](http://localhost:6006) to see the result
+## Styling
+This boilerplate uses Styled Component for creating CSS in JS and [Candi-UI](https://github.com/faizrktm/candi-ui) as a component library. You can remove this component if you want, just remove from package.json and do `yarn install or npm install`.
 
 ## Authors
 

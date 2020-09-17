@@ -1,6 +1,6 @@
-import Box from 'components/foundations/Box';
-import Heading, { DocumentOutline } from 'components/foundations/Heading';
-import Paragraph from 'components/foundations/Paragraph';
+import {
+  Box, DocumentOutline, Heading, Paragraph,
+} from 'candi-ui';
 import { useLanguage } from 'utils/i18n';
 
 export default function Home() {
