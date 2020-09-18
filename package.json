@@ -6,10 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "storybook-docs": "start-storybook -p 6006 --docs",
-    "build-storybook": "build-storybook -c .storybook -o storybook-static"
+    "test": "jest"
   },
   "dependencies": {
     "candi-ui": "^1.0.0-alpha.4",
@@ -23,9 +20,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
-    "@storybook/addon-essentials": "^6.0.21",
-    "@storybook/addon-links": "^6.0.21",
-    "@storybook/react": "^6.0.21",
     "@testing-library/dom": "^7.24.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.0",
