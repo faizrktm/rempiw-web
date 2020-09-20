@@ -2424,10 +2424,10 @@ camelize@^1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
-candi-ui@^1.0.0-alpha.4:
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/candi-ui/-/candi-ui-1.0.0-alpha.4.tgz#571dde7f732bae063eaa5665c7f12b848ab45f51"
-  integrity sha512-zCmI9BfANFBP7ZeRd6ziaCULxhVHK9Uy0wAR16PRqY03MD04Jeag7IFt2M0iHlHi4B5VHpia1/i/5BKXncv4NQ==
+candi-ui@^1.0.0-alpha.5:
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/candi-ui/-/candi-ui-1.0.0-alpha.5.tgz#244be2ca75ab375cb4844e1a7ba5cb631cae14b3"
+  integrity sha512-grlPAr+qSgtnNKoBgpwUPCwi5SPpJgNAwn+VM6NHTOuXVEOxnomt0fLdzUMO5XBkuo5/aXbai/tgt2/merRxog==
   dependencies:
     "@rollup/plugin-babel" "^5.2.1"
     prop-types "^15.7.2"
