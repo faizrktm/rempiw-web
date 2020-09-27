@@ -27,7 +27,7 @@ export default function Report({ invoice }) {
             </BorderedCard>
             <BorderedCard gap="medium">
               <Field label="Jumlah Kendaraan" content={`${invoice.invoice_details.length} Kendaraan`} />
-              <Field label="Total Tagihan" content={money.format(total)} />
+              <Field label="Total Tagihan" content={money.format(total)} contentClipboard={total} />
             </BorderedCard>
           </Box>
         </Card>
