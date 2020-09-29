@@ -2402,10 +2402,10 @@ camelize@^1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
-candi-ui@^1.0.0-alpha.8:
-  version "1.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/candi-ui/-/candi-ui-1.0.0-alpha.8.tgz#f19933c249eb52d421e29c7f91ed2b3a8aa06fb1"
-  integrity sha512-gD/QhMI0501xDm4IB07ZPbEIPfvY3+GxnKPZtXm7cY1sa4F1BuxRFrDHMZOn8RAnQHLLVJ+bLdD8Xu1KzqvRFw==
+candi-ui@^1.0.0-alpha.9:
+  version "1.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/candi-ui/-/candi-ui-1.0.0-alpha.9.tgz#e8dabf58ba994fdef0ead9cd565c278260dee29d"
+  integrity sha512-z3L8snlVgfe8VnBGdRWlR0Fl+4oVO77opmZKgq9fuweNzC7MBsevW6YOy09GJNj7/ooK7Dkac1dkFFYErimVSQ==
   dependencies:
     focus-trap "^6.1.0"
     prop-types "^15.7.2"
