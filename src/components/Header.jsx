@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Box, Text } from 'candi-ui';
 
-const Header = () => (
+const Header = ({ fullWidth }) => (
   <Container background="tertiary500">
-    <Wrapper>
+    <Wrapper fullWidth={fullWidth}>
       <Text color="white" weight="bold" size="large">
         rempIW
       </Text>
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 74px;
-  max-width: 480px;
+  max-width: ${({ fullWidth }) => (fullWidth ? '1140px' : '480px')};
   width: 100%;
   margin: 0px auto;
   padding: 0px 16px;

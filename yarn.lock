@@ -2402,10 +2402,10 @@ camelize@^1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
-candi-ui@^1.0.0-alpha.9:
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/candi-ui/-/candi-ui-1.0.0-alpha.9.tgz#e8dabf58ba994fdef0ead9cd565c278260dee29d"
-  integrity sha512-z3L8snlVgfe8VnBGdRWlR0Fl+4oVO77opmZKgq9fuweNzC7MBsevW6YOy09GJNj7/ooK7Dkac1dkFFYErimVSQ==
+candi-ui@^1.0.0-alpha.12:
+  version "1.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/candi-ui/-/candi-ui-1.0.0-alpha.12.tgz#5a7169f619c386e3c67690cf2b4cd2927a602b1c"
+  integrity sha512-EUFsUBnXIgpAmdxckzQFXc/b/mIY+NtEFNOajvG0FsmZTTye+KBcEXSL1t0GH3BlSPtAyupOUbOrHwl2X0qHzw==
   dependencies:
     focus-trap "^6.1.0"
     prop-types "^15.7.2"
@@ -6345,6 +6345,11 @@ react-feather@^2.0.8:
   integrity sha512-J0dCEOvOxpovHeOVj3+8mAhN3/UERTfX6rSxnV6x4E+0s+STY536jhSjRfpSvTQA0SSFjYr4KrpPfdsLmK+zZg==
   dependencies:
     prop-types "^15.7.2"
+
+react-hook-form@^6.9.2:
+  version "6.9.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.9.2.tgz#9512cd424e62235fda13c8fc1821f88c352e3d23"
+  integrity sha512-vCPEbHVCRvsoqrQARgQ7a3VrXzqbFOO53gHFRdQzLzHMT9kxum3wfcSi8A1b49KPRsomvsqexH4tBUJMneEu+Q==
 
 react-is@16.13.1, react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
